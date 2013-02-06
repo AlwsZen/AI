@@ -10,13 +10,13 @@ typedef struct tState_ {
   
 } tState;
 
-int compareArrays (int n, int a[n][n], int b[n][n]){
+int compareArrays (int *a, int *b, int n){
   int i = 0;
   int j = 0;
   int isEqual = 1;
   for(i;n;i++)
     for(j;n;j++)
-	if(a[i][j]!=b[i][j])
+	if(&a[i][j]!=&b[i][j])
 	    isEqual = 0;
   return isEqual;
 }
